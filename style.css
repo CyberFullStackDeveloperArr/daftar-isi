@@ -1,0 +1,28 @@
+h3 {
+ text-align: center;
+}
+.daftar, h4 {
+ margin: 10px 0;
+}
+.bab {
+ counter-increment: rubah-bab;
+}
+.bab::before {
+ content: "BAB " counter(rubah-bab) " ";
+}
+li, p, .daftar-atas {
+ list-style: none;
+ counter-increment: sub-bab-counter;
+ display: flex;
+ flex-direction: row-reverse;
+}
+li::before, p::before, .daftar-atas::before {
+ content: "";
+ flex-grow: 1;
+ border-bottom: 2px dotted black;
+ margin: 4px 10px;
+}
+li::after {
+ content: counter(rubah-bab) "." counter(sub-bab-counter) " ";
+ margin: 0px 10px;
+}
